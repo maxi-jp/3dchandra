@@ -41,7 +41,6 @@ public class PlayerShipController : MonoBehaviour
 
     void FixedUpdate ()
     {
-        Debug.Log(Input.GetAxis("Horizontal"));
         // movement
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         movement = movement.normalized;
@@ -119,8 +118,12 @@ public class PlayerShipController : MonoBehaviour
             targetLookAt = mousePosition - transform.position;
         }
         
-        transform.right = Vector3.Lerp(transform.right, targetLookAt, Time.deltaTime * rotationSpeed);
-
+        transform.right = Vector3.Lerp
+        (
+            transform.right,
+            targetLookAt,
+            Time.deltaTime * rotationSpeed
+        );
     }
 
 }
