@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4832913766029366}
   - component: {fileID: 33202189658293670}
   - component: {fileID: 114386644841943994}
-  m_Layer: 0
+  - component: {fileID: 70203920149240346}
+  m_Layer: 11
   m_Name: Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +39,7 @@ GameObject:
   - component: {fileID: 4144231217271228}
   - component: {fileID: 33171749410563286}
   - component: {fileID: 23475643592319224}
-  - component: {fileID: 136513214483916772}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +122,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223215862540900}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!70 &70203920149240346
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223215862540900}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 0.1}
+  m_Direction: 1
 --- !u!114 &114386644841943994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,17 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 24
-  damage: 1
---- !u!136 &136513214483916772
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1418346642990736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  damage: 10
+  shooterTag: 

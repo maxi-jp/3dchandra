@@ -90,11 +90,7 @@ public class PlayerShipController : MonoBehaviour
         Debug.DrawLine(transform.position,
             (transform.position + new Vector3(contraForce.x, contraForce.y, 0)),
             Color.green);
-
-
-
-
-
+        
         // velocity clamp
         float actualVelX = rigidbody.velocity.x;
         float actualVelY = rigidbody.velocity.y;
@@ -102,11 +98,7 @@ public class PlayerShipController : MonoBehaviour
         actualVelY = Mathf.Clamp(actualVelY, -maxVelocity, maxVelocity);
 
         rigidbody.velocity = new Vector2(actualVelX, actualVelY);
-
-        /*Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
-        movement = movement.normalized * maxVelocity * Time.deltaTime;
-
-        rigidbody.MovePosition(transform.position + movement);*/
+        
 
         // rotation
         // mouse raycast to floor plane
