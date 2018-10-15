@@ -72,6 +72,8 @@ public class EnemyController : MonoBehaviour
 
     public void Dead ()
     {
+        // add points to game controller
+        GameController.instance.PlayerScore += life.points;
         Destroy(gameObject);
     }
 
