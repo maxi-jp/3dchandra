@@ -37,7 +37,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collider)
     {
-        Debug.Log(collider.gameObject.tag);
+        //Debug.Log(collider.gameObject.tag);
         if (collider.gameObject.tag != shooterTag)
         {
             CLife cLife = collider.GetComponent<CLife>();

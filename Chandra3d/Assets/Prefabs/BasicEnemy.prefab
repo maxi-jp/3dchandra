@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61521379651103740}
   - component: {fileID: 50790119059012224}
   - component: {fileID: 114295025769299064}
-  - component: {fileID: 114580259561583400}
+  - component: {fileID: 114853996621742940}
   m_Layer: 10
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 100
---- !u!114 &114580259561583400
+  points: 100
+--- !u!114 &114853996621742940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,11 +153,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929077101246266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f226aa089572c4043a03ea33e76522d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ece9a6b4ee05a043831cba4b17b1bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: {fileID: 114295025769299064}
   player: {fileID: 0}
   maxVelocity: 4
-  pushPower: 200
-  timeToPushShip: 0.25
+  pushPower: 100
+  timeToPushShip: 0.5

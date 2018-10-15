@@ -13,6 +13,8 @@ public class BulletPoolerScript : MonoBehaviour
 
     List<GameObject> pooledBullets;
 
+    public Transform bulletsParentTransform;
+
     private void Awake ()
     {
         instance = this;
@@ -28,6 +30,9 @@ public class BulletPoolerScript : MonoBehaviour
             GameObject obj = Instantiate(pooledBullet);
             obj.SetActive(false);
             pooledBullets.Add(obj);
+
+            if (bulletsParentTransform)
+                obj.transform.SetParent(bulletsParentTransform);
         }
     }
 
@@ -35,7 +40,7 @@ public class BulletPoolerScript : MonoBehaviour
     {
         for (int i = 0; i < pooledBullets.Count; i++)
         {
-            if (pooledBullets[i].activeInHierarchy)
+            if (!pooledBullets[i].activeInHierarchy)
                 return pooledBullets[i];
         }
 
@@ -43,7 +48,12 @@ public class BulletPoolerScript : MonoBehaviour
         if (willGrow)
         {
             GameObject obj = Instantiate(pooledBullet);
+            obj.SetActive(false);
             pooledBullets.Add(obj);
+
+            if (bulletsParentTransform)
+                obj.transform.SetParent(bulletsParentTransform);
+
             return obj;
         }
 
