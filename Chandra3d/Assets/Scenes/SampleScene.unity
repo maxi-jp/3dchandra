@@ -670,6 +670,10 @@ Prefab:
       propertyPath: m_Name
       value: PushEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1929077101246266, guid: c68c336d3e7e6c5459d0a65a2855508d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c68c336d3e7e6c5459d0a65a2855508d, type: 2}
   m_IsPrefabAsset: 0
@@ -1382,6 +1386,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4e01c5fa9eb91d04f997e756979cd155, type: 2}
+    - target: {fileID: 50790119059012224, guid: c68c336d3e7e6c5459d0a65a2855508d,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114853996621742940, guid: c68c336d3e7e6c5459d0a65a2855508d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: c68c336d3e7e6c5459d0a65a2855508d, type: 2}
@@ -1412,11 +1421,13 @@ MonoBehaviour:
   player: {fileID: 956584774}
   maxVelocity: 10
   canonPoint: {fileID: 265536001}
-  chasingSpeed: 10
-  shootingSpeed: 4
+  chasingSpeed: 2
+  shootingSpeed: 20
+  rotationSpeed: 1
   shootCadency: 0.5
   shootPower: 1
   bulletsVelocity: 20
+  distanceToPlayerToEndChasing: 4
 --- !u!4 &2073555000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4790325450484102, guid: c68c336d3e7e6c5459d0a65a2855508d,
