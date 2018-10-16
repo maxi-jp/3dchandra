@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1929077101246266}
   m_IsPrefabAsset: 1
+--- !u!1 &1049020122128638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4666376571441418}
+  m_Layer: 10
+  m_Name: canon point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1929077101246266
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +39,7 @@ GameObject:
   - component: {fileID: 61521379651103740}
   - component: {fileID: 50790119059012224}
   - component: {fileID: 114295025769299064}
-  - component: {fileID: 114853996621742940}
+  - component: {fileID: 114391066484140996}
   m_Layer: 10
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -32,6 +47,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4666376571441418
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049020122128638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4790325450484102}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4790325450484102
 Transform:
   m_ObjectHideFlags: 1
@@ -39,9 +67,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929077101246266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.929, y: 0, z: 0}
+  m_LocalPosition: {x: 3.42, y: 3.89, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_Children: []
+  m_Children:
+  - {fileID: 4666376571441418}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d193b6773dff71546a77776d97c89ceb, type: 2}
+  - {fileID: 2100000, guid: 4e01c5fa9eb91d04f997e756979cd155, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,7 +129,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -145,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 100
   points: 100
---- !u!114 &114853996621742940
+--- !u!114 &114391066484140996
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,11 +182,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929077101246266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ece9a6b4ee05a043831cba4b17b1bbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b262e8a42a305e44a91a3d136cf76e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   life: {fileID: 114295025769299064}
   player: {fileID: 0}
-  maxVelocity: 4
-  pushPower: 100
-  timeToPushShip: 0.5
+  maxVelocity: 10
+  canonPoint: {fileID: 4666376571441418}
+  chasingSpeed: 2
+  shootingSpeed: 20
+  rotationSpeed: 1
+  shootCadency: 0.5
+  shootPower: 1
+  bulletsVelocity: 20
+  distanceToPlayerToEndChasing: 4
